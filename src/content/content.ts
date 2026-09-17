@@ -52,7 +52,7 @@ export const content: SiteContent = {
     "I'm a full-stack developer who turns product ideas into fast, accessible web applications. I work primarily in TypeScript and React, usually with Next.js and Tailwind CSS on the front end, backed by Node.js and PostgreSQL when there is real logic to do.",
     "I care about the parts that separate working software from credible software: clean architecture, typed contracts, automated tests, and performance budgets. When a page loads in under a second and a screen reader can move through it without a fight, the details are done.",
   ],
-  siteUrl: "https://alexcarter.github.io",
+  siteUrl: "https://israelbukunmi1-cmyk.github.io/my-portfolio",
   email: "hello@example.com",
   githubUrl: "https://github.com/alexcarter",
   linkedinUrl: "https://www.linkedin.com/in/alexcarter",

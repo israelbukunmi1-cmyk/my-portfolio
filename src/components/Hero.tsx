@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { content } from "@/content/content";
 
 export default function Hero() {
@@ -28,9 +29,9 @@ export default function Hero() {
             <a href="#projects" className="btn btn-primary">
               View projects
             </a>
-            <a href={content.resumeUrl} target="_blank" rel="noopener" className="btn btn-secondary">
+            <Link href={content.resumeUrl} target="_blank" rel="noopener" className="btn btn-secondary">
               Resume
-            </a>
+            </Link>
           </div>
         </div>
       </div>
