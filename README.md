@@ -20,7 +20,7 @@ Everything lives in `index.html` — the browser-friendly version of this templa
 3. Replace the placeholder images in `assets/` (see specs below).
 4. Commit and push — GitHub Actions publishes the change automatically.
 
-Holding a quick edit session? Do a find-and-replace for `alexcarter`, `Alex Carter`, and `example.com` first — those cover most of the placeholders.
+Holding a quick edit session? Do a find-and-replace for `alexcarter`, `Alex Carter`, and `example.com` first — those cover most of the placeholders (the site name is now **Israel Bukunmi Akintoye**).
 
 ## Asset specs
 

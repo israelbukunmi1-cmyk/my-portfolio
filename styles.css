@@ -413,6 +413,10 @@ a {
   padding: 1.5rem;
 }
 
+.video-card .card-title {
+  margin-bottom: 1rem;
+}
+
 .video-tile {
   display: block;
   width: 100%;

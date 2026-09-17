@@ -53,35 +53,4 @@
       observer.observe(el);
     });
   }
-
-  /* ---------- Video testimonial ---------- */
-
-  var tile = document.getElementById("video-tile");
-  if (tile) {
-    var videoId = tile.getAttribute("data-video-id");
-    var thumb = tile.querySelector(".video-thumb");
-
-    if (!videoId || videoId === "placeholder") {
-      thumb.classList.add("is-placeholder");
-      tile.setAttribute("aria-disabled", "true");
-    } else {
-      tile.addEventListener("click", function () {
-        var iframe = document.createElement("iframe");
-        iframe.src =
-          "https://www.youtube-nocookie.com/embed/" +
-          encodeURIComponent(videoId) +
-          "?autoplay=1&rel=0";
-        iframe.title = "Video testimonial";
-        iframe.setAttribute("loading", "lazy");
-        iframe.setAttribute(
-          "allow",
-          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        );
-        iframe.setAttribute("allowfullscreen", "");
-        thumb.textContent = "";
-        thumb.appendChild(iframe);
-        tile.setAttribute("aria-label", "Video testimonial is playing");
-      });
-    }
-  }
 })();
