@@ -43,4 +43,4 @@ Holding a quick edit session? Do a find-and-replace for `alexcarter`, `Alex Cart
 
 - Uses **relative paths** for all links and assets, so it works at both a root URL (`<username>.github.io`) and a subpath (`<username>.github.io/<repo>`).
 - `.nojekyll` stops GitHub Pages from running Jekyll over the files.
-- Dark mode follows the OS theme via `prefers-color-scheme`; motion is disabled under `prefers-reduced-motion`.
+- Motion is disabled under `prefers-reduced-motion`.

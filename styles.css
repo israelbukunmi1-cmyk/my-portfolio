@@ -1,6 +1,6 @@
 /* ==========================================================================
    Portfolio — plain CSS
-   Light/dark theme via prefers-color-scheme, no external framework.
+   Single cream/brown theme, no external framework.
    ========================================================================== */
 
 :root {
@@ -14,19 +14,6 @@
   --brand-contrast: #ffffff;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --app: #1b1711;
-    --panel: #211c15;
-    --ink: #efe9dd;
-    --ink-muted: #a8a190;
-    --hairline: #332c21;
-    --brand: #d99a45;
-    --brand-strong: #c58b35;
-    --brand-contrast: #241a08;
-  }
 }
 
 /* ---------- Base ---------- */
