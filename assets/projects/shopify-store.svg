@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Shopify Dropshipping Store">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#241c12"/>
+      <stop offset="1" stop-color="#4a2f10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.15" r="0.9">
+      <stop offset="0" stop-color="#d99a45" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#d99a45" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#glow)"/>
+  <g transform="translate(456 150) scale(12)" fill="none" stroke="#f4e8d6" stroke-opacity="0.16" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M6.5 8h11l1.3 12.5H5.2L6.5 8z"/>
+    <path d="M9 8a3 3 0 0 1 6 0"/>
+  </g>
+  <text x="72" y="636" font-family="Inter, 'Segoe UI', sans-serif" font-size="22" font-weight="600" letter-spacing="6" fill="#d99a45">SHOPIFY STOREFRONT</text>
+  <text x="72" y="690" font-family="Inter, 'Segoe UI', sans-serif" font-size="40" font-weight="700" fill="#f6efe3">Dropshipping · Footwear Brand</text>
+</svg>

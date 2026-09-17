@@ -35,6 +35,26 @@
     #prt-chat-bubble:hover { transform: scale(1.06); }
     #prt-chat-bubble svg { width: 28px; height: 28px; fill: white; }
 
+    #prt-chat-label {
+      position: fixed;
+      bottom: 36px;
+      right: 92px;
+      padding: 7px 12px;
+      border: 1px solid #e7e0d2;
+      border-radius: 999px;
+      background: #fff;
+      color: #242018;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+      z-index: 999999;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+    }
+    #prt-chat-label:hover { transform: translateY(-1px); }
+    #prt-chat-label.prt-hidden { opacity: 0; pointer-events: none; }
+
     #prt-chat-window {
       position: fixed;
       bottom: 92px;
@@ -161,11 +181,13 @@
         right: 4vw;
         bottom: 84px;
       }
+      #prt-chat-label { display: none; }
     }
   `;
   document.head.appendChild(style);
 
   root.innerHTML = `
+    <div id="prt-chat-label">Try my AI assistant</div>
     <div id="prt-chat-bubble" aria-label="Open chat">
       <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
     </div>
@@ -185,6 +207,7 @@
   `;
 
   const bubble = document.getElementById("prt-chat-bubble");
+  const label = document.getElementById("prt-chat-label");
   const win = document.getElementById("prt-chat-window");
   const closeBtn = document.getElementById("prt-chat-close");
   const messagesEl = document.getElementById("prt-chat-messages");
@@ -200,11 +223,13 @@
       addMessage(GREETING, "bot");
     }
     if (win.classList.contains("prt-open")) {
+      label.classList.add("prt-hidden");
       input.focus();
     }
   }
 
   bubble.addEventListener("click", toggleWindow);
+  label.addEventListener("click", toggleWindow);
   closeBtn.addEventListener("click", toggleWindow);
 
   function addMessage(text, sender) {
