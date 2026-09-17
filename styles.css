@@ -159,8 +159,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 1px solid var(--hairline);
-  background-color: var(--app);
+  border-bottom: 1px solid #332c21;
+  background-color: #1b1711;
+  color: #efe9dd;
 }
 
 .nav {
@@ -250,6 +251,36 @@ a {
 .nav-links.open a {
   display: block;
   padding: 0.75rem 0;
+}
+
+/* Dark nav — keep logo, links, and toggle readable on the dark header */
+
+.sticky .nav-logo {
+  color: #efe9dd;
+}
+
+.sticky .accent {
+  color: #d99a45;
+}
+
+.sticky .nav-links a {
+  color: #cbc4b6;
+}
+
+.sticky .nav-links a:hover {
+  color: #efe9dd;
+}
+
+.sticky .nav-toggle__bar {
+  background-color: #efe9dd;
+}
+
+.sticky .nav-links.open {
+  border-top-color: #332c21;
+}
+
+.sticky :focus-visible {
+  outline-color: #d99a45;
 }
 
 /* ---------- Hero ---------- */
@@ -366,6 +397,7 @@ a {
 
 .card-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   margin-top: 1.5rem;
   padding-top: 1rem;
@@ -383,6 +415,31 @@ a {
 .card-links a:hover {
   color: var(--brand-strong);
   text-decoration: underline;
+}
+
+/* ---------- Card review ---------- */
+
+.card-review {
+  margin: 1.25rem 0 0;
+  padding: 0.875rem 1rem;
+  border-left: 2px solid var(--brand);
+  background-color: var(--app);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.card-review blockquote {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.card-review figcaption {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
 }
 
 /* ---------- Review cards ---------- */
