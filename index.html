@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Alex Carter — Full-stack Developer</title>
+  <meta name="description" content="Full-stack developer building fast, reliable web apps." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://israelbukunmi1-cmyk.github.io/my-portfolio/" />
+  <meta property="og:site_name" content="Alex Carter" />
+  <meta property="og:title" content="Alex Carter — Full-stack Developer" />
+  <meta property="og:description" content="Full-stack developer building fast, reliable web apps." />
+  <meta property="og:image" content="https://israelbukunmi1-cmyk.github.io/my-portfolio/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alex Carter — Full-stack Developer" />
+  <meta name="twitter:description" content="Full-stack developer building fast, reliable web apps." />
+  <meta name="twitter:image" content="https://israelbukunmi1-cmyk.github.io/my-portfolio/assets/og-image.png" />
+
+  <!-- Icons -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://israelbukunmi1-cmyk.github.io/my-portfolio/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="sticky">
+    <nav class="wrap nav" aria-label="Primary">
+      <a href="#top" class="nav-logo">Alex Carter<span class="accent">.</span></a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-links"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="top">
+      <div class="wrap hero">
+        <div class="hero-media">
+          <img
+            src="assets/headshot.png"
+            alt="Portrait of Alex Carter"
+            width="800"
+            height="800"
+            class="avatar"
+          />
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Hello, I&rsquo;m</p>
+          <h1 class="hero-title">Alex Carter</h1>
+          <p class="hero-subtitle">Full-stack developer building fast, reliable web apps.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View projects</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+              Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <div class="wrap section">
+        <div class="reveal">
+          <p class="eyebrow">01 · Projects</p>
+          <h2 class="section-title">Things I&rsquo;ve built</h2>
+          <p class="section-note">
+            Three projects that show how I work: typed end to end, tested, and shipped.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal" style="--reveal-delay: 0ms">
+            <div class="card-media">
+              <img src="assets/projects/ledger.png" alt="Ledger — screenshot" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Ledger</h3>
+              <p class="card-stack">Next.js · TypeScript · PostgreSQL</p>
+              <p class="card-outcome">
+                A double-entry bookkeeping dashboard for freelancers, with monthly rollups and export.
+              </p>
+              <div class="card-links">
+                <a href="https://example.com/ledger" target="_blank" rel="noopener">Live demo →</a>
+                <a href="https://github.com/alexcarter/ledger" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" style="--reveal-delay: 80ms">
+            <div class="card-media">
+              <img src="assets/projects/pulse.png" alt="Pulse — screenshot" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Pulse</h3>
+              <p class="card-stack">React · TypeScript · WebSocket</p>
+              <p class="card-outcome">
+                A real-time analytics board that keeps key metrics in one glanceable view.
+              </p>
+              <div class="card-links">
+                <a href="https://example.com/pulse" target="_blank" rel="noopener">Live demo →</a>
+                <a href="https://github.com/alexcarter/pulse" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" style="--reveal-delay: 160ms">
+            <div class="card-media">
+              <img src="assets/projects/format.png" alt="Format — screenshot" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Format</h3>
+              <p class="card-stack">Node.js · TypeScript · React</p>
+              <p class="card-outcome">
+                A Markdown-to-PDF document pipeline wrapped in a drag-and-drop editor.
+              </p>
+              <div class="card-links">
+                <a href="https://example.com/format" target="_blank" rel="noopener">Live demo →</a>
+                <a href="https://github.com/alexcarter/format" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section id="reviews">
+      <div class="wrap section">
+        <div class="reveal">
+          <p class="eyebrow">02 · Reviews</p>
+          <h2 class="section-title">What people say</h2>
+          <p class="section-note">
+            A video walkthrough and two written notes from people I&rsquo;ve shipped with.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="card video-card reveal">
+            <button
+              type="button"
+              class="video-tile"
+              id="video-tile"
+              data-video-id="placeholder"
+              aria-label="Play video testimonial"
+            >
+              <span class="video-thumb">
+                <span class="video-play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72l11-6.86-11-6.86z" /></svg>
+                </span>
+              </span>
+            </button>
+            <p class="video-summary">
+              A two-minute conversation with a founder about what it was like shipping together.
+            </p>
+          </div>
+
+          <figure class="card quote-card reveal" style="--reveal-delay: 80ms">
+            <blockquote>
+              &ldquo;Alex rebuilt our checkout in two weeks and conversion jumped 23%. The code was clean
+              enough that our own team took over without a handover document.&rdquo;
+            </blockquote>
+            <figcaption>Maya Chen, Product Lead, Northwind Labs</figcaption>
+          </figure>
+
+          <figure class="card quote-card reveal" style="--reveal-delay: 160ms">
+            <blockquote>
+              &ldquo;The rare developer who argues about accessibility budgets as hard as about feature
+              work. Our scores finally look respectable.&rdquo;
+            </blockquote>
+            <figcaption>Jonas Weber, CTO, Baltic Systems</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="wrap section">
+        <div class="reveal">
+          <p class="eyebrow">03 · About</p>
+          <h2 class="section-title">How I work</h2>
+          <p class="section-note">The stack I reach for, and the standards I hold it to.</p>
+        </div>
+
+        <div class="about-copy reveal" style="--reveal-delay: 80ms">
+          <p>
+            I'm a full-stack developer who turns product ideas into fast, accessible web applications.
+            I work primarily in TypeScript and React, usually with Next.js and Tailwind CSS on the front
+            end, backed by Node.js and PostgreSQL when there is real logic to do.
+          </p>
+          <p>
+            I care about the parts that separate working software from credible software: clean
+            architecture, typed contracts, automated tests, and performance budgets. When a page loads in
+            under a second and a screen reader can move through it without a fight, the details are done.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="wrap section">
+        <div class="reveal">
+          <p class="eyebrow">04 · Contact</p>
+          <h2 class="section-title">Say hello</h2>
+          <p class="section-note">
+            Questions, project briefs, or a coffee — pick the channel you prefer.
+          </p>
+        </div>
+
+        <div class="contact-grid reveal" style="--reveal-delay: 80ms">
+          <a class="contact-card" href="mailto:hello@example.com">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">hello@example.com</span>
+            <span class="contact-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-card" href="https://github.com/israelbukunmi1-cmyk" target="_blank" rel="noopener">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/israelbukunmi1-cmyk</span>
+            <span class="contact-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-card" href="https://www.linkedin.com/in/alexcarter" target="_blank" rel="noopener">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/alexcarter</span>
+            <span class="contact-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-card" href="https://wa.me/15551234567" target="_blank" rel="noopener">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">wa.me/15551234567</span>
+            <span class="contact-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap footer">
+      <p class="footer-copy">© <span id="year">2026</span> Alex Carter. All rights reserved.</p>
+      <a
+        href="https://github.com/israelbukunmi1-cmyk/my-portfolio"
+        target="_blank"
+        rel="noopener"
+        class="footer-source"
+      >
+        Source on GitHub
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
