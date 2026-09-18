@@ -46,9 +46,10 @@
       <a href="#top" class="nav-logo">Israel Bukunmi <span class="accent">Akintoye.</span></a>
 
       <ul class="nav-links" id="nav-links">
+        <li><a href="#videos">Video</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#contact" class="nav-cta" data-magnetic>Contact</a></li>
       </ul>
 
       <button
@@ -69,7 +70,7 @@
     <!-- ============ HERO ============ -->
     <section id="top">
       <div class="wrap hero">
-        <div class="hero-media">
+        <div class="hero-media" data-hero style="--d: 0.05s">
           <img
             src="assets/headshot.jpg"
             alt="Portrait of Israel Bukunmi Akintoye"
@@ -80,18 +81,29 @@
         </div>
 
         <div class="hero-copy">
-          <p class="eyebrow">Hello, I&rsquo;m</p>
-          <h1 class="hero-title">Israel Bukunmi Akintoye</h1>
-          <p class="hero-subtitle">I build AI chatbots, voice agents, and automation systems that help businesses capture leads, answer customers, and save hours every week.</p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+          <p class="eyebrow" data-hero style="--d: 0.2s">Hello, I&rsquo;m</p>
+          <h1 class="hero-title" data-hero style="--d: 0.3s">Israel Bukunmi Akintoye</h1>
+          <p class="hero-role" data-hero style="--d: 0.4s">
+            <span class="hero-role__word" data-words="AI Agent Developer|Voice &amp; Chatbot Builder|Automation Specialist|Shopify Developer"></span><span class="hero-role__caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero-subtitle" data-hero style="--d: 0.5s">I build AI chatbots, voice agents, and automation systems that help businesses capture leads, answer customers, and save hours every week.</p>
+          <div class="hero-actions" data-hero style="--d: 0.65s">
+            <a href="#projects" class="btn btn-primary" data-magnetic>View projects</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary" data-magnetic>
               Resume
             </a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">OpenAI</span><span class="marquee__item">Vapi</span><span class="marquee__item">n8n</span><span class="marquee__item">Twilio</span><span class="marquee__item">WhatsApp API</span><span class="marquee__item">Google Sheets</span><span class="marquee__item">Shopify</span><span class="marquee__item">Liquid</span><span class="marquee__item">JavaScript</span><span class="marquee__item">AI Chatbots</span><span class="marquee__item">Voice Agents</span><span class="marquee__item">Automation</span>
+        <span class="marquee__item">OpenAI</span><span class="marquee__item">Vapi</span><span class="marquee__item">n8n</span><span class="marquee__item">Twilio</span><span class="marquee__item">WhatsApp API</span><span class="marquee__item">Google Sheets</span><span class="marquee__item">Shopify</span><span class="marquee__item">Liquid</span><span class="marquee__item">JavaScript</span><span class="marquee__item">AI Chatbots</span><span class="marquee__item">Voice Agents</span><span class="marquee__item">Automation</span>
+      </div>
+    </div>
 
     <!-- ============ VIDEOS ============ -->
     <section id="videos">

@@ -819,6 +819,325 @@ footer {
   }
 }
 
+/* ---------- Creative effects ---------- */
+
+/* Anchor offset so the sticky pill never covers a section heading */
+section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--app);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d8cbb0;
+  border: 3px solid var(--app);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--brand);
+}
+
+html {
+  scrollbar-color: #d8cbb0 var(--app);
+  scrollbar-width: thin;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--brand), #c98a3d);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Nav logo accent shimmer */
+.nav-logo .accent {
+  background: linear-gradient(110deg, var(--brand) 30%, #c98a3d 50%, var(--brand) 70%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: accent-shimmer 6s linear infinite;
+}
+
+@keyframes accent-shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+
+/* Active nav link (scroll spy) */
+.nav-links a.is-active {
+  color: var(--brand);
+}
+
+/* Hero ambient glow */
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(138 76 14 / 0.14), transparent 62%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: hero-pulse 9s ease-in-out infinite;
+}
+
+@keyframes hero-pulse {
+  50% {
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+}
+
+/* Rotating dashed ring around the avatar */
+.hero-media {
+  position: relative;
+}
+
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -0.8rem;
+  border: 2px dashed var(--brand);
+  border-radius: 9999px;
+  opacity: 0.45;
+  animation: ring-spin 26s linear infinite;
+}
+
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar {
+  box-shadow: 0 24px 48px rgb(36 32 24 / 0.18);
+  animation: avatar-bob 5s ease-in-out infinite;
+}
+
+@keyframes avatar-bob {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Staggered hero entrance */
+.hero [data-hero] {
+  opacity: 0;
+  animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Gradient shimmer headline */
+.hero-title {
+  background: linear-gradient(110deg, var(--ink) 15%, var(--brand) 35%, #b9772f 50%, var(--brand) 65%, var(--ink) 85%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: title-shimmer 9s linear infinite;
+}
+
+@keyframes title-shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+
+/* Rotating role word + caret */
+.hero-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 1rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  min-height: 1.5rem;
+}
+
+.hero-role__word {
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-role__word.is-fade {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.hero-role__caret {
+  width: 2px;
+  height: 1em;
+  background-color: var(--brand);
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Button magnetic + shine */
+.btn,
+nav .nav-cta {
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.28), transparent);
+  transform: skewX(-20deg);
+}
+
+.btn-primary:hover::after {
+  animation: btn-shine 0.9s ease;
+}
+
+@keyframes btn-shine {
+  to {
+    left: 160%;
+  }
+}
+
+/* Elevated hover glow on clickable cards */
+.card-link:hover,
+.contact-card:hover {
+  box-shadow: 0 18px 44px rgb(138 76 14 / 0.16);
+}
+
+/* Tech marquee */
+.marquee {
+  position: relative;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  overflow: hidden;
+  background-color: var(--ink);
+  padding-block: 1.15rem;
+  transform: rotate(-0.75deg);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--app);
+}
+
+.marquee__item::after {
+  content: "\2726";
+  margin-left: 2.5rem;
+  font-size: 0.7rem;
+  color: var(--brand);
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Back to top */
+.to-top {
+  position: fixed;
+  bottom: 6.75rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  background-color: var(--brand);
+  color: var(--brand-contrast);
+  box-shadow: 0 10px 24px rgb(138 76 14 / 0.35);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.15s ease;
+  z-index: 99999;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.to-top:hover {
+  background-color: var(--brand-strong);
+}
+
+.to-top svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -831,6 +1150,10 @@ footer {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .marquee__track {
+    animation: none;
   }
 
   *,
