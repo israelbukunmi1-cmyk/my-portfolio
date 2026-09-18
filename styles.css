@@ -423,6 +423,13 @@ a {
   color: var(--ink-muted);
 }
 
+.card-rating {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: var(--brand);
+}
+
 /* ---------- Review cards ---------- */
 
 .quote-card {
