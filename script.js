@@ -92,6 +92,33 @@
     { passive: true }
   );
 
+  /* ---------- Nav scrolled state ---------- */
+
+  var stickyHeader = document.querySelector(".sticky");
+  if (stickyHeader) {
+    var onNavScroll = function () {
+      stickyHeader.classList.toggle("is-scrolled", window.scrollY > 10);
+    };
+    onNavScroll();
+    window.addEventListener("scroll", onNavScroll, { passive: true });
+  }
+
+  /* ---------- Hero title letter stagger ---------- */
+
+  var heroTitle = document.querySelector(".hero-title");
+  if (heroTitle && !reduceMotion && !("ontouchstart" in window)) {
+    var titleText = heroTitle.textContent.trim();
+    heroTitle.removeAttribute("data-hero");
+    heroTitle.setAttribute("aria-label", titleText);
+    heroTitle.innerHTML = titleText
+      .split("")
+      .map(function (ch, i) {
+        var safe = ch.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        return '<span class="c" style="--di:' + (120 + i * 45) + 'ms">' + (ch === " " ? "&nbsp;" : safe) + "</span>";
+      })
+      .join("");
+  }
+
   /* ---------- Rotating hero role ---------- */
 
   var wordEl = document.querySelector("[data-words]");
@@ -155,6 +182,54 @@
   var desktopWide = window.matchMedia("(min-width: 768px)").matches;
 
   if (finePointer && desktopWide && !reduceMotion) {
+    /* Custom cursor + ambient glow */
+    var cursorDot = document.createElement("div");
+    cursorDot.className = "cursor-dot";
+    var cursorRing = document.createElement("div");
+    cursorRing.className = "cursor-ring";
+    var cursorGlow = document.createElement("div");
+    cursorGlow.className = "cursor-glow";
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorRing);
+    document.body.appendChild(cursorGlow);
+    document.body.classList.add("cursor-on");
+
+    var cx = 0,
+      cy = 0,
+      rx = 0,
+      ry = 0,
+      gx = 0,
+      gy = 0;
+
+    document.addEventListener(
+      "mousemove",
+      function (e) {
+        cx = e.clientX;
+        cy = e.clientY;
+        cursorDot.style.transform = "translate(" + cx + "px, " + cy + "px) translate(-50%, -50%)";
+      },
+      { passive: true }
+    );
+
+    (function cursorLoop() {
+      rx += (cx - rx) * 0.18;
+      ry += (cy - ry) * 0.18;
+      gx += (cx - gx) * 0.09;
+      gy += (cy - gy) * 0.09;
+      cursorRing.style.transform = "translate(" + rx + "px, " + ry + "px) translate(-50%, -50%)";
+      cursorGlow.style.transform = "translate(" + gx + "px, " + gy + "px) translate(-50%, -50%)";
+      requestAnimationFrame(cursorLoop);
+    })();
+
+    document.addEventListener("mouseover", function (e) {
+      var target = e.target.closest("a, button, .video-tile, [data-magnetic], .to-top");
+      cursorRing.classList.toggle("is-link", !!target);
+    });
+
+    document.addEventListener("mouseout", function (e) {
+      if (!e.relatedTarget) cursorRing.classList.remove("is-link");
+    });
+
     /* 3D card tilt */
     var tiltables = document.querySelectorAll(".card, .contact-card");
     tiltables.forEach(function (el) {
