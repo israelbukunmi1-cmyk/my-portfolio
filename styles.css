@@ -557,8 +557,44 @@ a {
   letter-spacing: -0.02em;
 }
 
+.page-head {
+  padding-bottom: 0;
+}
+
 .video-thumb.is-placeholder {
   gap: 0.75rem;
+}
+
+/* ---------- Photo gallery ---------- */
+
+.photo-card {
+  overflow: hidden;
+}
+
+.photo-card .photo-thumb {
+  aspect-ratio: 4 / 3;
+  background-color: var(--app);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.photo-thumb.is-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-thumb.is-placeholder::after {
+  content: "Photo coming soon";
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.photo-card figcaption {
+  padding: 1rem 1.5rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
 }
 
 /* ---------- About ---------- */
