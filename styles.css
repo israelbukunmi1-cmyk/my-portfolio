@@ -229,7 +229,6 @@ a {
   align-items: flex-start;
   gap: 0;
   width: 100%;
-  border-top: 1px solid var(--hairline);
   padding: 0.5rem 1.5rem 0.75rem;
 }
 
@@ -658,6 +657,8 @@ a {
   font-size: 15px;
   font-weight: 500;
   color: var(--ink);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .contact-card:hover .contact-value {
@@ -782,6 +783,39 @@ footer {
 
   .footer {
     flex-direction: row;
+  }
+}
+
+/* ---------- Mobile refinements ---------- */
+
+@media (max-width: 767px) {
+  .nav {
+    position: relative;
+  }
+
+  .nav-links.open {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    left: 0;
+    border: 1px solid var(--hairline);
+    border-radius: 0.75rem;
+    background-color: var(--panel);
+    box-shadow: 0 12px 32px rgb(36 32 24 / 0.12);
+  }
+}
+
+@media (max-width: 479px) {
+  .sticky {
+    padding-inline: 0.75rem;
+  }
+
+  .nav {
+    padding-inline: 1.25rem;
+  }
+
+  .wrap {
+    padding-inline: 1.25rem;
   }
 }
 
